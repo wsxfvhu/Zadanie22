@@ -38,7 +38,7 @@ namespace Zadacha1
             Action<Task, object> action2 = new Action<Task, object>(GetArraySum);
             Action<Task, object> action3 = new Action<Task, object>(GetArrayMax);
             Task task2 = task1.ContinueWith(action2, array);
-            Task task3 = task1.ContinueWith(action3, array);
+            Task task3 = task2.ContinueWith(action3, array);
             task1.Start();
             Console.ReadKey();
         }
